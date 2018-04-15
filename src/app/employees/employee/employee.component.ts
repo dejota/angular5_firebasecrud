@@ -10,9 +10,13 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-
-  constructor(private employeeService: EmployeeService,
-              private toastr: ToastrService) { }
+  public employeeService: EmployeeService
+  constructor(private EmployeeService: EmployeeService,
+              private toastr: ToastrService) { 
+              
+              /* se crea EmployeeService en privado y se pasa a una variable publica, sino tira error al compilar */
+              this.employeeService = EmployeeService;
+              }
 
   ngOnInit() {
     this.employeeService.getData();
