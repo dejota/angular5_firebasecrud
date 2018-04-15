@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* el input necesita ser required, una vez que escribio y borro ese campo de texto, sale el borde rojo de error */
+input.ng-invalid.ng-dirty {
+  border: 1px solid red;
+}
+
+button:hover, a.btn:hover {
+  cursor: pointer;
+}

@@ -1,3 +1,20 @@
-<p>
-  employee-list works!
-</p>
+<h6 class="text-center">Employee Register</h6>
+<br>
+<table class="table table-sm table-hover">
+  <!-- itera todos los elementos que tiene employeeList -->
+  <tr *ngFor="let employee of employeeList">
+    <td>{{ employee.name }}</td>
+    <td>{{ employee.position }}</td>
+    <td>
+      <!-- esta a la escucha del click en este boton y le pasa el objeto employee, que es el que quiere editar -->
+      <a class="btn" (click)="onEdit(employee)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      
+      <!-- solo necesita pasarle el dato de la key a borrar -->
+      <a class="btn" (click)="onDelete(employee.$key)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+    </td>
+  </tr>
+</table>

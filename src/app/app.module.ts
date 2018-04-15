@@ -9,6 +9,12 @@ import { environment } from './../environments/environment';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { FormsModule } from '@angular/forms';
+
+/* para mostrar mensajes de crud en el formulario */
+import { ToastrModule } from 'ngx-toastr';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,12 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
   imports: [
     BrowserModule,
     /* inicializa AngularFireModule con la config que trae de environment */
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    FormsModule,
+    ToastrModule.forRoot(),
+    /* toastr tira error en consola para solucionarlo instalar npm install @angular/animations --save, BrowserAnimationsModule, importarlo y declararlo */
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
